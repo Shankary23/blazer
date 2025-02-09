@@ -8,6 +8,7 @@ Pictures/
 Music/
 Movies/
 node_modules/
+.env/
 # Ignore other sensitive directories (optional)
 *.dmg
 *.app
