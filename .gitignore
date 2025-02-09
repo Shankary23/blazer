@@ -1,0 +1,13 @@
+# macOS system files
+.DS_Store
+.Trash/
+
+# System-related directories
+Library/
+Pictures/
+Music/
+Movies/
+node_modules/
+# Ignore other sensitive directories (optional)
+*.dmg
+*.app
