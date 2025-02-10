@@ -4,7 +4,7 @@ import WildfireMap from "./components/WildfireMap";
 function App() {
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>🔥 Wildfire Tracker</h1>
+      <h1 style={{ textAlign: "center" }}>Blaze Monitor</h1>
       <WildfireMap />
     </div>
   );

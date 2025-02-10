@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { divIcon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -76,19 +76,18 @@ const WildfireMap = () => {
       const zipLat = parseFloat(data[0].lat);
       const zipLon = parseFloat(data[0].lon);
 
-      console.log(`📌 ZIP Code Coordinates: ${zipLat}, ${zipLon}`);
+      console.log(`ZIP Code Coordinates: ${zipLat}, ${zipLon}`);
 
       setCenter([zipLat, zipLon]); 
       setMapKey(prevKey => prevKey + 1); 
 
     } catch (error) {
-      console.error("❌ Error fetching ZIP code location:", error);
+      console.error(" Error fetching ZIP code location:", error);
     }
   };
 
   return (
     <>
-      {/* 🔍 ZIP Code Search Input */}
       <div style={{ marginBottom: "10px", textAlign: "center" }}>
         <input
           type="text"
@@ -105,7 +104,7 @@ const WildfireMap = () => {
       <MapContainer key={mapKey} center={center} zoom={6} style={{ height: "500px", width: "100%" }}>
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CartoDB</a>'
+          // attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CartoDB</a>'
         />
 
         {fireData.map((fire, index) =>
@@ -122,6 +121,7 @@ const WildfireMap = () => {
             </Marker>
           ))
         )}
+
       </MapContainer>
     </>
   );
