@@ -1,22 +1,19 @@
 {
     "title": "Monitor de Incendios",
     "checklist": {
-      "title": "Lista de Verificación del Proyecto de Rastreo de Incendios",
-      "items": [
-        "Inicializar proyecto React",
-        "Configurar la estructura del proyecto",
-        "Instalar dependencias necesarias (React Router, Axios, etc.)",
-        "Elegir y configurar API de datos de incendios",
-        "Configurar llamadas API usando Axios o Fetch",
-        "Manejar errores de API y estados de carga",
-        "Diseñar la interfaz y componentes",
-        "Implementar mapa interactivo para ubicaciones de incendios",
-        "Mostrar detalles del incendio en un formato fácil de usar",
-        "Asegurar diseño responsivo (sin Tailwind)"
-      ]
+        "title": "Lista de Preparación para Incendios",
+        "items": [
+        "Plan de Emergencia",
+        "Kit de Emergencia (Agua, Comida No Perecedera, Kit de Primeros Auxilios, Medicamentos, Ropa, Mascarillas)",
+        "Documentos Importantes",
+        "Teléfono y Cargador de Teléfono",
+        "Kit de Emergencia en su Vehículo"
+        ]
     },
     "search_zip": "Ingrese el código postal",
     "search_button": "Buscar",
-    "translated_text": "Texto Traducido"
+    "translated_text": "Texto Traducido",
+    "loading_message": "Los datos se están cargando"
+    
   }
   

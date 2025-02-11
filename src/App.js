@@ -15,6 +15,7 @@ function App() {
       <nav>
         <button onClick={() => changeLanguage("en")}>English</button>
         <button onClick={() => changeLanguage("es")}>Español</button>
+        <button onClick={() => changeLanguage("cn")}>Chinese</button>
       </nav>
       
       <h1 style={{ textAlign: "center" }}>{t("title")}</h1>

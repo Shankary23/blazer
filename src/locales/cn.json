@@ -1,0 +1,19 @@
+
+{
+    "title": "火焰监视器",
+    "checklist": {
+        "title": "火灾准备清单",
+        "items": [
+          "紧急计划",
+          "紧急包（水、非易腐食品、急救包、药物、衣物、口罩）",
+          "重要文件",
+          "电话和电话充电器",
+          "车辆中的紧急包"
+        ]
+      },
+    "search_zip": "Enter ZIP code",
+    "search_button": "Search",
+    "translated_text": "Translated Text",
+    "loading_message": "数据正在加载中"
+  }
+  

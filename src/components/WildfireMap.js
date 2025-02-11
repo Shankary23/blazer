@@ -9,7 +9,7 @@ const WildfireMap = () => {
   const { t } = useTranslation();
   const [fireData, setFireData] = useState([]);
   const [loading, setLoading] = useState(true); 
-  const [zip, setZip] = useState("");
+  // const [zip, setZip] = useState("");
   const [center, setCenter] = useState([37.0902, -95.7129]); 
   const [mapKey, setMapKey] = useState(0);
 
@@ -22,7 +22,7 @@ const WildfireMap = () => {
         const response = await fetch(NASA_API_URL);
         const data = await response.json();
   
-        console.log("🔥 API Response Data: ", data);
+        console.log("API Response Data: ", data);
         if (!data.events || data.events.length === 0) {
           console.warn(" No events found in API response");
           setFireData([]);
@@ -56,42 +56,42 @@ const WildfireMap = () => {
     popupAnchor: [0, -12],
   });
 
-  const handleZipSearch = async () => {
-    if (!zip) {
-      console.warn("No ZIP code entered");
-      return;
-    }
+  // const handleZipSearch = async () => {
+  //   if (!zip) {
+  //     console.warn("No ZIP code entered");
+  //     return;
+  //   }
 
-    try {
-      console.log(`🔍 Searching for ZIP code: ${zip}`);
+  //   try {
+  //     console.log(`🔍 Searching for ZIP code: ${zip}`);
 
-      const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&postalcode=${zip}&countrycodes=US`);
-      const data = await response.json();
+  //     const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&postalcode=${zip}&countrycodes=US`);
+  //     const data = await response.json();
 
-      console.log(" OpenStreetMap Response: ", data);
+  //     console.log(" OpenStreetMap Response: ", data);
 
-      if (!data[0]) {
-        console.error(" Invalid ZIP code entered.");
-        alert("Invalid ZIP code. Please enter a valid US ZIP code.");
-        return;
-      }
+  //     if (!data[0]) {
+  //       console.error(" Invalid ZIP code entered.");
+  //       alert("Invalid ZIP code. Please enter a valid US ZIP code.");
+  //       return;
+  //     }
 
-      const zipLat = parseFloat(data[0].lat);
-      const zipLon = parseFloat(data[0].lon);
+  //     const zipLat = parseFloat(data[0].lat);
+  //     const zipLon = parseFloat(data[0].lon);
 
-      console.log(`ZIP Code Coordinates: ${zipLat}, ${zipLon}`);
+  //     console.log(`ZIP Code Coordinates: ${zipLat}, ${zipLon}`);
 
-      setCenter([zipLat, zipLon]); 
-      setMapKey(prevKey => prevKey + 1); 
+  //     setCenter([zipLat, zipLon]); 
+  //     setMapKey(prevKey => prevKey + 1); 
 
-    } catch (error) {
-      console.error(" Error fetching ZIP code location:", error);
-    }
-  };
+  //   } catch (error) {
+  //     console.error(" Error fetching ZIP code location:", error);
+  //   }
+  // };
 
   return (
     <>
-      <div style={{ marginBottom: "10px", textAlign: "center" }}>
+      {/* <div style={{ marginBottom: "10px", textAlign: "center" }}>
         <input
           type="text"
           placeholder="Enter ZIP code"
@@ -102,30 +102,30 @@ const WildfireMap = () => {
         <button onClick={handleZipSearch} style={{ marginLeft: "5px", padding: "5px 10px", fontSize: "16px" }}>
         {t("search_button")}
         </button>
-      </div>
-
-      <MapContainer key={mapKey} center={center} zoom={6} style={{ height: "500px", width: "100%" }}>
-        <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
-          // attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CartoDB</a>'
-        />
-
-        {fireData.map((fire, index) =>
-          fire.geometry?.map((geo, i) => (
-            <Marker
-              key={`${index}-${i}`}
-              position={[geo.coordinates[1], geo.coordinates[0]]}
-              icon={fireIcon}
-            >
-              <Popup>
-                <strong>{fire.title}</strong><br />
-                {geo.date ? new Date(geo.date).toLocaleString() : "No date available"}
-              </Popup>
-            </Marker>
-          ))
-        )}
-
-      </MapContainer>
+      </div> */}
+      {loading && <div style={{ textAlign: "center", fontSize: "18px" }}>{t("loading_message")}</div>}
+      {!loading && (
+        <MapContainer key={mapKey} center={center} zoom={5} style={{ height: "500px", width: "100%" }}>
+          <TileLayer
+            url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+          />
+  
+          {fireData.map((fire, index) =>
+            fire.geometry?.map((geo, i) => (
+              <Marker
+                key={`${index}-${i}`}
+                position={[geo.coordinates[1], geo.coordinates[0]]}
+                icon={fireIcon}
+              >
+                <Popup>
+                  <strong>{fire.title}</strong><br />
+                  {geo.date ? new Date(geo.date).toLocaleString() : "No date available"}
+                </Popup>
+              </Marker>
+            ))
+          )}
+        </MapContainer>
+      )}
     </>
   );
 };
