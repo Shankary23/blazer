@@ -61,7 +61,7 @@ const WildfireMap = () => {
     const confirmReset = window.confirm(t("reset_map_confirm"));
     if(confirmReset){
       setCenter([37.0902, -95.7129]);
-      setZoom(5);
+      setZoom(4);
       setMapKey(prevKey => prevKey + 1);  // Force map to reset by changing key
     }
   };
@@ -122,7 +122,7 @@ const WildfireMap = () => {
         </button>
       </div>
       {!loading && (
-        <MapContainer key={mapKey} center={center} zoom={zoom} style={{ height: "500px", width: "100%" }}>
+        <MapContainer key={mapKey} center={center} zoom={zoom} style={{ height: "500px", width: "50%", display: "block", margin: "0 auto" }}>
           <TileLayer
             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
           />
