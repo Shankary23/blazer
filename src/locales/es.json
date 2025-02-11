@@ -13,7 +13,8 @@
     "search_zip": "Ingrese el código postal",
     "search_button": "Buscar",
     "translated_text": "Texto Traducido",
-    "loading_message": "Los datos se están cargando"
+    "loading_message": "Los datos se están cargando",
+    "reset_map": "Restablecer mapa"
     
   }
   

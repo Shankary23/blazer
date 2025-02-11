@@ -10,6 +10,7 @@ const WildfireMap = () => {
   const [fireData, setFireData] = useState([]);
   const [loading, setLoading] = useState(true); 
   // const [zip, setZip] = useState("");
+  const [zoom, setZoom] = useState(5);
   const [center, setCenter] = useState([37.0902, -95.7129]); 
   const [mapKey, setMapKey] = useState(0);
 
@@ -56,6 +57,11 @@ const WildfireMap = () => {
     popupAnchor: [0, -12],
   });
 
+  const handleReset = () => {
+    setCenter([37.0902, -95.7129]);
+    setZoom(5);
+    setMapKey(prevKey => prevKey + 1);  // Force map to reset by changing key
+  };
   // const handleZipSearch = async () => {
   //   if (!zip) {
   //     console.warn("No ZIP code entered");
@@ -104,8 +110,16 @@ const WildfireMap = () => {
         </button>
       </div> */}
       {loading && <div style={{ textAlign: "center", fontSize: "18px" }}>{t("loading_message")}</div>}
+      <div style={{ marginBottom: "10px", textAlign: "center" }}>
+        <button 
+          onClick={handleReset}
+          style={{ padding: "10px 20px", fontSize: "16px", cursor: "pointer" }}
+        >
+          {t("reset_map")}
+        </button>
+      </div>
       {!loading && (
-        <MapContainer key={mapKey} center={center} zoom={5} style={{ height: "500px", width: "100%" }}>
+        <MapContainer key={mapKey} center={center} zoom={zoom} style={{ height: "500px", width: "100%" }}>
           <TileLayer
             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
           />
