@@ -14,7 +14,8 @@
     "search_button": "Buscar",
     "translated_text": "Texto Traducido",
     "loading_message": "Los datos se están cargando",
-    "reset_map": "Restablecer mapa"
+    "reset_map": "Restablecer mapa",
+    "reset_map_confirm": "¿Está seguro de que desea restablecer el mapa?"
     
   }
   

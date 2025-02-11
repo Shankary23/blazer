@@ -58,9 +58,12 @@ const WildfireMap = () => {
   });
 
   const handleReset = () => {
-    setCenter([37.0902, -95.7129]);
-    setZoom(5);
-    setMapKey(prevKey => prevKey + 1);  // Force map to reset by changing key
+    const confirmReset = window.confirm(t("reset_map_confirm"));
+    if(confirmReset){
+      setCenter([37.0902, -95.7129]);
+      setZoom(5);
+      setMapKey(prevKey => prevKey + 1);  // Force map to reset by changing key
+    }
   };
   // const handleZipSearch = async () => {
   //   if (!zip) {
