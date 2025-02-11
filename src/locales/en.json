@@ -1,0 +1,23 @@
+
+{
+    "title": "Blaze Monitor",
+    "checklist": {
+      "title": "Fire Tracker Project Checklist",
+      "items": [
+        "Initialize React project",
+        "Set up project structure",
+        "Install necessary dependencies (React Router, Axios, etc.)",
+        "Choose and configure fire data API",
+        "Set up API calls using Axios or Fetch",
+        "Handle API errors and loading states",
+        "Design layout and components",
+        "Implement interactive map for fire locations",
+        "Display fire details in a user-friendly format",
+        "Ensure responsive design (without Tailwind)"
+      ]
+    },
+    "search_zip": "Enter ZIP code",
+    "search_button": "Search",
+    "translated_text": "Translated Text"
+  }
+  

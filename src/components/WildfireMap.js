@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { divIcon } from "leaflet";
+import { useTranslation } from "react-i18next";
+
 import "leaflet/dist/leaflet.css";
 
 const WildfireMap = () => {
+  const { t } = useTranslation();
   const [fireData, setFireData] = useState([]);
   const [loading, setLoading] = useState(true); 
   const [zip, setZip] = useState("");
@@ -33,10 +36,10 @@ const WildfireMap = () => {
           event.geometry.some(geo => new Date(geo.date) >= threeMonthsAgo) // 🔥 Keep only recent wildfires
         );
   
-        console.log("🔥 Filtered Wildfires (Last 3 Months): ", wildfires);
+        console.log("Filtered Wildfires (Last 3 Months): ", wildfires);
         setFireData(wildfires);
       } catch (error) {
-        console.error("❌ Error fetching wildfire data:", error);
+        console.error("Error fetching wildfire data:", error);
       } finally {
         setLoading(false);
       }
@@ -65,10 +68,10 @@ const WildfireMap = () => {
       const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&postalcode=${zip}&countrycodes=US`);
       const data = await response.json();
 
-      console.log("📍 OpenStreetMap Response: ", data);
+      console.log(" OpenStreetMap Response: ", data);
 
       if (!data[0]) {
-        console.error("❌ Invalid ZIP code entered.");
+        console.error(" Invalid ZIP code entered.");
         alert("Invalid ZIP code. Please enter a valid US ZIP code.");
         return;
       }
@@ -97,7 +100,7 @@ const WildfireMap = () => {
           style={{ padding: "5px", fontSize: "16px" }}
         />
         <button onClick={handleZipSearch} style={{ marginLeft: "5px", padding: "5px 10px", fontSize: "16px" }}>
-          Search
+        {t("search_button")}
         </button>
       </div>
 
