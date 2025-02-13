@@ -114,6 +114,9 @@ const WildfireMap = () => {
       </div> */}
       {loading && <div style={{ textAlign: "center", fontSize: "18px" }}>{t("loading_message")}</div>}
       <div style={{ marginBottom: "10px", textAlign: "center" }}>
+        <h2>Try our translate feature in the top left if you are having trouble reading!</h2>
+        <p>Use the plus and minus symbols to zoom in and out of the map, and use reset if you get lost!</p>
+        <p>If you use the reset button beware you cannot go back, it will fully reset the map!</p>
         <button 
           onClick={handleReset}
           style={{ padding: "10px 20px", fontSize: "16px", cursor: "pointer" }}
