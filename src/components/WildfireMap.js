@@ -114,12 +114,19 @@ const WildfireMap = () => {
       </div> */}
       {loading && <div style={{ textAlign: "center", fontSize: "18px" }}>{t("loading_message")}</div>}
       <div style={{ marginBottom: "10px", textAlign: "center" }}>
-        <h2>Try our translate feature in the top left if you are having trouble reading!</h2>
-        <p>Use the plus and minus symbols to zoom in and out of the map, and use reset if you get lost!</p>
-        <p>If you are used to navigating maps you can just double click the area you want to zoom, 
-          <br></br>this is faster and saves you from scrolling to the location and then clicking the plus icon</p>
-        <p>If you use the reset button beware you cannot go back, it will fully reset the map!</p>
-        <p>To find information about a specific fire that might be impacting you:</p>
+        <h2>{t("translate_feature_info")}</h2>
+        <p>{t("zoom_instructions")}</p>
+        <p>
+          {t("double_click_zoom").split("\n").map((line, index) => (
+            <React.Fragment key={index}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
+        </p>
+        <p>{t("reset_warning")}</p>
+        <p>{t("fire_info_steps")}</p>
+
         <ol style={{ 
             listStyleType: "decimal", 
             listStylePosition: "inside", 
@@ -128,11 +135,9 @@ const WildfireMap = () => {
             display: "table", 
             paddingBottom:"20px" 
           }}>
-          <li>Find the area on the map where you live</li>
-          <li>Click the fire icon for the area you are looking for</li>
-          <li>Now you see relevant information about the fire
-
-          </li>
+          <li>{t("step_1")}</li>
+          <li>{t("step_2")}</li>
+          <li>{t("step_3")}</li>
         </ol>
 
         <button 

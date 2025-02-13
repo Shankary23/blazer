@@ -16,6 +16,16 @@
     "translated_text": "Translated Text",
     "loading_message": "Data is loading",
     "reset_map":" Reset Map",
-    "reset_map_confirm": "Are you sure you want to reset the map?"
+    "reset_map_confirm": "Are you sure you want to reset the map?",
+    "translate_feature_info": "Try our translate feature in the top left if you are having trouble reading!",
+    "zoom_instructions": "Use the plus and minus symbols to zoom in and out of the map, and use reset if you get lost!",
+    "double_click_zoom": "If you are used to navigating maps you can just double click the area you want to zoom, \n this is faster and saves you from scrolling to the location and then clicking the plus icon",
+    "reset_warning": "If you use the reset button beware you cannot go back, it will fully reset the map!",
+    "fire_info_steps": "To find information about a specific fire that might be impacting you:",
+    "step_1": "Find the area on the map where you live",
+    "step_2": "Click the fire icon for the area you are looking for",
+    "step_3": "Now you see relevant information about the fire"
+    
   }
+  
   
