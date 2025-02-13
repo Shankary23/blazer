@@ -116,7 +116,25 @@ const WildfireMap = () => {
       <div style={{ marginBottom: "10px", textAlign: "center" }}>
         <h2>Try our translate feature in the top left if you are having trouble reading!</h2>
         <p>Use the plus and minus symbols to zoom in and out of the map, and use reset if you get lost!</p>
+        <p>If you are used to navigating maps you can just double click the area you want to zoom, 
+          <br></br>this is faster and saves you from scrolling to the location and then clicking the plus icon</p>
         <p>If you use the reset button beware you cannot go back, it will fully reset the map!</p>
+        <p>To find information about a specific fire that might be impacting you:</p>
+        <ol style={{ 
+            listStyleType: "decimal", 
+            listStylePosition: "inside", 
+            textAlign: "left", 
+            margin: "0 auto", 
+            display: "table", 
+            paddingBottom:"20px" 
+          }}>
+          <li>Find the area on the map where you live</li>
+          <li>Click the fire icon for the area you are looking for</li>
+          <li>Now you see relevant information about the fire
+
+          </li>
+        </ol>
+
         <button 
           onClick={handleReset}
           style={{ padding: "10px 20px", fontSize: "16px", cursor: "pointer" }}
