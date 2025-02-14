@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div>
-      <nav>
+      <nav style={{textAlign: "center"}}>
         <button onClick={() => changeLanguage("en")}>English</button>
         <button onClick={() => changeLanguage("es")}>Español</button>
         <button onClick={() => changeLanguage("cn")}>Chinese</button>

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { divIcon } from "leaflet";
 import { useTranslation } from "react-i18next";
-
 import "leaflet/dist/leaflet.css";
 
 const WildfireMap = () => {
