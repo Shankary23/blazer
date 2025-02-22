@@ -2,6 +2,8 @@ import React from "react";
 import WildfireMap from "./components/WildfireMap";
 import FireTrackerChecklist from "./components/Checklist";
 import { useTranslation } from "react-i18next";
+import Chatbot from "./components/chatbot";
+import 'animate.css';
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -21,6 +23,7 @@ function App() {
       <h1 style={{ textAlign: "center" }}>{t("title")}</h1>
       <WildfireMap />
       <FireTrackerChecklist />
+      <Chatbot/>
     </div>
   );
 }
