@@ -9,7 +9,7 @@ i18n
     fallbackLng: 'en', 
     lng: 'en', 
     backend: {
-      loadPath: 'http://localhost:3001/translations/{{lng}}.json', // Path to the microservice serving translations
+      loadPath: 'http://localhost:3001/translations/{{lng}}.json', 
     },
     interpolation: {
       escapeValue: false, 

@@ -3,6 +3,7 @@ import WildfireMap from "./components/WildfireMap";
 import FireTrackerChecklist from "./components/Checklist";
 import { useTranslation } from "react-i18next";
 import Chatbot from "./components/chatbot";
+import News from "./components/news"; 
 import 'animate.css';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
 
   return (
     <div>
-      <nav style={{textAlign: "center"}}>
+      <nav style={{textAlign: "left"}}>
         <button onClick={() => changeLanguage("en")}>English</button>
         <button onClick={() => changeLanguage("es")}>Español</button>
         <button onClick={() => changeLanguage("cn")}>Chinese</button>
@@ -23,7 +24,8 @@ function App() {
       <h1 style={{ textAlign: "center" }}>{t("title")}</h1>
       <WildfireMap />
       <FireTrackerChecklist />
-      <Chatbot/>
+      <Chatbot />
+      <News /> 
     </div>
   );
 }

@@ -1,0 +1,48 @@
+/* checklist.css */
+
+/* Container for the checklist */
+.checklist-container {
+    padding: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .checklist-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 16px;
+  }
+  
+  .checklist-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .checklist-item input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  .checklist-item span {
+    font-size: 16px;
+    color: #4a5568;
+  }
+  
+  .checklist-item span.checked {
+    text-decoration: line-through;
+    color: #718096;
+  }
+  

@@ -1,0 +1,97 @@
+/* WildfireMap.css */
+
+/* Centering and styling the zip code search input and button */
+.zip-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .zip-container input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    max-width: 80%;
+  }
+  
+  .zip-container button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .zip-container button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Loading message styling */
+  .loading-message {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  /* Instructions and reset section */
+  .instructions-container {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .instructions-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .instructions-container p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .instructions-container ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+    text-align: left;
+    margin: 0 auto;
+    display: table;
+    padding-bottom: 20px;
+  }
+  
+  /* Reset button styling */
+  .reset-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reset-button:hover {
+    background-color: #e55347;
+  }
+  
+  /* Map container styling */
+  .map-container {
+    height: 500px;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  /* Adding a little margin to the page */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  

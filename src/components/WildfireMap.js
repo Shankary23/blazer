@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { divIcon } from "leaflet";
 import { useTranslation } from "react-i18next";
 import "leaflet/dist/leaflet.css";
+import './wildfireMap.css';  
 
 const WildfireMap = () => {
   const { t } = useTranslation();
@@ -97,29 +98,25 @@ const WildfireMap = () => {
 
   return (
     <>
-      <div style={{ marginBottom: "10px", textAlign: "center" }}>
+      <div className="zip-container">
         <input
           type="text"
           placeholder="Enter ZIP code"
           value={zip}
           onChange={(e) => setZip(e.target.value)}
-          style={{ padding: "5px", fontSize: "16px" }}
         />
-        <button
-          onClick={handleZipSearch}
-          style={{ marginLeft: "5px", padding: "5px 10px", fontSize: "16px" }}
-        >
+        <button onClick={handleZipSearch}>
           {t("search_button")}
         </button>
       </div>
 
       {loading && (
-        <div style={{ textAlign: "center", fontSize: "18px" }}>
+        <div className="loading-message">
           {t("loading_message")}
         </div>
       )}
 
-      <div style={{ marginBottom: "10px", textAlign: "center" }}>
+      <div className="instructions-container">
         <h2>{t("translate_feature_info")}</h2>
         <p>{t("zoom_instructions")}</p>
         <p>
@@ -135,59 +132,42 @@ const WildfireMap = () => {
         <p>{t("reset_warning")}</p>
         <p>{t("fire_info_steps")}</p>
 
-        <ol
-          style={{
-            listStyleType: "decimal",
-            listStylePosition: "inside",
-            textAlign: "left",
-            margin: "0 auto",
-            display: "table",
-            paddingBottom: "20px",
-          }}
-        >
+        <ol>
           <li>{t("step_1")}</li>
           <li>{t("step_2")}</li>
           <li>{t("step_3")}</li>
         </ol>
 
-        <button
-          onClick={handleReset}
-          style={{ padding: "10px 20px", fontSize: "16px", cursor: "pointer" }}
-        >
+        <button className="reset-button" onClick={handleReset}>
           {t("reset_map")}
         </button>
       </div>
 
       {!loading && (
         <MapContainer
-        key={`${center[0]}-${center[1]}-${zoom}`} // Update the key based on center and zoom
-        center={center}
-        zoom={zoom}
-        style={{
-          height: "500px",
-          width: "50%",
-          display: "block",
-          margin: "0 auto",
-        }}
-      >
-        <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" />
+          key={`${center[0]}-${center[1]}-${zoom}`} // Update the key based on center and zoom
+          center={center}
+          zoom={zoom}
+          className="map-container"
+        >
+          <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" />
       
-        {fireData.map((fire, index) =>
-          fire.geometry?.map((geo, i) => (
-            <Marker
-              key={`${index}-${i}`}
-              position={[geo.coordinates[1], geo.coordinates[0]]}
-              icon={fireIcon}
-            >
-              <Popup>
-                <strong>{fire.title}</strong>
-                <br />
-                {geo.date ? new Date(geo.date).toLocaleString() : "No date available"}
-              </Popup>
-            </Marker>
-          ))
-        )}
-      </MapContainer>
+          {fireData.map((fire, index) =>
+            fire.geometry?.map((geo, i) => (
+              <Marker
+                key={`${index}-${i}`}
+                position={[geo.coordinates[1], geo.coordinates[0]]}
+                icon={fireIcon}
+              >
+                <Popup>
+                  <strong>{fire.title}</strong>
+                  <br />
+                  {geo.date ? new Date(geo.date).toLocaleString() : "No date available"}
+                </Popup>
+              </Marker>
+            ))
+          )}
+        </MapContainer>
       )}
     </>
   );
